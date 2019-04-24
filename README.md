@@ -27,7 +27,7 @@
 2. Append the following lines to `android/settings.gradle`:
   	```
   	include ':react-native-androidprogressbar'
-  	project(':react-native-androidprogressbar').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-androidprogressbar/android')
+  	project(':react-native-androidprogressbar').projectDir = new File(rootProject.projectDir, 	'../../node_modules/react-native-androidprogressbar/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```

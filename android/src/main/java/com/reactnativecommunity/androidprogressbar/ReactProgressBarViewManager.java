@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-package com.facebook.react.views.progressbar;
+package com.reactnativecommunity.progressbar;
 
 import javax.annotation.Nullable;
 

@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "babel-plugin-module-resolver": "^3.2.0",
-    "flow": "^0.2.3",
     "react": "^16.8.3",
     "react-native": "^0.59.5",
     "react-timer-mixin": "^0.13.4"
@@ -27,9 +26,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/runtime": "^7.4.3",
-    "babel-cli": "^6.26.0",
     "babel-jest": "^24.7.1",
-    "babel-preset-flow": "^6.23.0",
     "jest": "^24.7.1",
     "metro-react-native-babel-preset": "^0.53.1",
     "react-test-renderer": "16.8.3"

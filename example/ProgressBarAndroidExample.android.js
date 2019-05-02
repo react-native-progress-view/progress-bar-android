@@ -10,7 +10,7 @@
 
 'use strict';
 
-var ProgressBar = require('../../Libraries/Components/ProgressBarAndroid/ProgressBarAndroid');
+var ProgressBar = require('../js/RNCProgressBarAndroid.android');
 var React = require('react');
 var createReactClass = require('create-react-class');
 var RNTesterBlock = require('./RNTesterBlock');
@@ -40,7 +40,7 @@ var MovingBar = createReactClass({
   },
 });
 
-class ProgressBarAndroidExample extends React.Component<{}> {
+export default class ProgressBarAndroidExample extends React.Component<{}> {
   static title = '<ProgressBarAndroid>';
   static description = 'Horizontal bar to show the progress of some operation.';
 

@@ -29,5 +29,4 @@ type NativeProps = $ReadOnly<{|
 type ProgressBarAndroidType = Class<NativeComponent<NativeProps>>;
 
 module.exports = ((requireNativeComponent(
-  'AndroidProgressBar',
-): any): ProgressBarAndroidType);
+  'AndroidProgressBar')));

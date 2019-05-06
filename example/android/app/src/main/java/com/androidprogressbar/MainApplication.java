@@ -1,4 +1,4 @@
-package com.androidprogressbarexample;
+package com.androidprogressbar;
 
 import android.app.Application;
 

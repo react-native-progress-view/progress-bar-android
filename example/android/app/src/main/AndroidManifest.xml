@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.androidprogressbarexample">
+  package="com.androidprogressbar">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

@@ -5,6 +5,18 @@
 
 `$ npm install react-native-androidprogressbar --save`
 
+## Example setup
+
+### Android
+1. Install dependencies
+2. Start the server
+3. Build the application
+```
+npm install
+npm run start
+npm run build:android
+```
+
 ### Mostly automatic installation
 
 `$ react-native link react-native-androidprogressbar`

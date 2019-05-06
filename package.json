@@ -4,8 +4,10 @@
   "description": "React Native Android Progress Bar",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start:android": "adb shell am start -n com.androidprogressbar/.MainActivity",
+    "build:android": "cd example/android && ./gradlew installDebug && cd ../.. && npm run start:android",
+    "test": "jest"
   },
   "keywords": [
     "react-native",

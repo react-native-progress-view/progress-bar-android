@@ -1,0 +1,44 @@
+{
+  "name": "react-native-androidprogressbar",
+  "version": "1.0.0",
+  "description": "React Native Android Progress Bar",
+  "main": "index.js",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start:android": "adb shell am start -n com.androidprogressbar/.MainActivity",
+    "build:android": "cd example/android && ./gradlew installDebug && cd ../.. && npm run start:android",
+    "test": "jest",
+    "validate:eslint": "eslint 'js/**/*.js' && eslint 'example/**/*.js'"
+  },
+  "keywords": [
+    "react-native",
+    "react native",
+    "androidprogressbar"
+  ],
+  "author": "",
+  "license": "",
+  "peerDependencies": {
+    "react-native": "^0.41.2"
+  },
+  "dependencies": {
+    "babel-plugin-module-resolver": "^3.2.0",
+    "react": "^16.8.3",
+    "react-native": "^0.59.5",
+    "react-timer-mixin": "^0.13.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/runtime": "^7.4.3",
+    "@react-native-community/eslint-config": "0.0.5",
+    "babel-jest": "^24.7.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "jest": "^24.7.1",
+    "metro-react-native-babel-preset": "^0.53.1",
+    "prettier": "^1.17.0",
+    "react-test-renderer": "16.8.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

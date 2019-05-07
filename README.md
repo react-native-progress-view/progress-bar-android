@@ -6,6 +6,7 @@
 `$ npm install react-native-androidprogressbar --save`
 
 ## Example setup
+![](https://user-images.githubusercontent.com/25158423/57262658-0d4c5b00-703b-11e9-9e0d-bdf7cb8f942a.gif)
 
 ### Android
 1. Install dependencies

@@ -1,6 +1,8 @@
 
 # react-native-androidprogressbar
 
+[![Lean Core Badge][lean-core-badge]][lean-core-issue]
+
 ## Getting started
 
 `$ npm install react-native-androidprogressbar --save`
@@ -56,3 +58,5 @@ import RNCAndroidprogressbar from 'react-native-androidprogressbar';
 RNCAndroidprogressbar;
 ```
   
+[lean-core-badge]: https://img.shields.io/badge/Lean%20Core-Extracted-brightgreen.svg?style=flat-square
+[lean-core-issue]: https://github.com/facebook/react-native/issues/23313

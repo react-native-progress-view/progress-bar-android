@@ -1,5 +1,5 @@
 {
-  "name": "react-native-androidprogressbar",
+  "name": "@react-native-community/progress-bar-android",
   "version": "1.0.0",
   "description": "React Native Android Progress Bar",
   "main": "index.js",
@@ -13,7 +13,15 @@
   "keywords": [
     "react-native",
     "react native",
-    "androidprogressbar"
+    "androidprogressbar",
+    "android",
+    "progress-bar"
+  ],
+  "files": [
+    "android",
+    "ios",
+    "js",
+    "index.js"
   ],
   "author": "",
   "license": "",

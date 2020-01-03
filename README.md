@@ -1,9 +1,11 @@
 
-# react-native-androidprogressbar
+# @react-native-community/progress-bar-android
+
+[![Lean Core Badge][lean-core-badge]][lean-core-issue]
 
 ## Getting started
 
-`$ npm install react-native-androidprogressbar --save`
+`$ npm install @react-native-community/progress-bar-android --save`
 
 ## Example setup
 ![](https://user-images.githubusercontent.com/25158423/57262658-0d4c5b00-703b-11e9-9e0d-bdf7cb8f942a.gif)
@@ -20,7 +22,7 @@ npm run build:android
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-androidprogressbar`
+`$ react-native link @react-native-community/progress-bar-android`
 
 ### Manual installation
 
@@ -28,7 +30,7 @@ npm run build:android
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-androidprogressbar` and add `RNCAndroidprogressbar.xcodeproj`
+2. Go to `node_modules` ➜ `@react-native-community/progress-bar-android` and add `RNCAndroidprogressbar.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNCAndroidprogressbar.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
@@ -39,20 +41,22 @@ npm run build:android
   - Add `new RNCAndroidprogressbarPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-androidprogressbar'
-  	project(':react-native-androidprogressbar').projectDir = new File(rootProject.projectDir, 	'../../node_modules/react-native-androidprogressbar/android')
+  	include ':@react-native-community_progress-bar-android'
+  	project(':@react-native-community_progress-bar-android').projectDir = new File(rootProject.projectDir, 	'../../node_modules/@react-native-community/progress-bar-android/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-androidprogressbar')
+      implementation project(':@react-native-community_progress-bar-android')
   	```
 
 
 ## Usage
 ```javascript
-import RNCAndroidprogressbar from 'react-native-androidprogressbar';
+import RNCAndroidprogressbar from '@react-native-community/progress-bar-android';
 
 // TODO: What to do with the module?
 RNCAndroidprogressbar;
 ```
   
+[lean-core-badge]: https://img.shields.io/badge/Lean%20Core-Extracted-brightgreen.svg?style=flat-square
+[lean-core-issue]: https://github.com/facebook/react-native/issues/23313

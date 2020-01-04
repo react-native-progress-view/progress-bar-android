@@ -10,15 +10,15 @@
 
 'use strict';
 
-var ProgressBar = require('../js/RNCProgressBarAndroid.android');
-var React = require('react');
-var createReactClass = require('create-react-class');
-var RNTesterBlock = require('./RNTesterBlock');
-var RNTesterPage = require('./RNTesterPage');
+import {ProgressBar} from '@react-native-community/progress-bar-android';
+import React from 'react';
+import createReactClass from 'create-react-class';
+import RNTesterBlock from './RNTesterBlock';
+import RNTesterPage from './RNTesterPage';
 
-var TimerMixin = require('react-timer-mixin');
+import TimerMixin from 'react-timer-mixin';
 
-var MovingBar = createReactClass({
+const MovingBar = createReactClass({
   displayName: 'MovingBar',
   mixins: [TimerMixin],
 

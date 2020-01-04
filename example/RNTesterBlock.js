@@ -10,10 +10,9 @@
 
 'use strict';
 
-var React = require('react');
-var PropTypes = require('prop-types');
-var ReactNative = require('react-native');
-var {StyleSheet, Text, View} = ReactNative;
+import React from 'react';
+import PropTypes from 'prop-types';
+import {StyleSheet, Text, View} from 'react-native';
 
 class RNTesterBlock extends React.Component<
   {
@@ -95,4 +94,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = RNTesterBlock;
+export default RNTesterBlock;

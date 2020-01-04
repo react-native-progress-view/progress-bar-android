@@ -12,12 +12,17 @@
 
 ### Android
 1. Install dependencies
-2. Start the server
-3. Build the application
-```
-npm install
-npm run start
-npm run build:android
+1. Install dependencies for example folder
+1. Start the metro bundler
+1. Build the application
+
+```sh
+yarn install
+cd example
+# inside example
+yarn install
+yarn start
+yarn android
 ```
 
 ### Mostly automatic installation

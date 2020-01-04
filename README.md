@@ -7,6 +7,10 @@
 
 `$ npm install @react-native-community/progress-bar-android --save`
 
+or
+
+`$ yarn add @react-native-community/progress-bar-android`
+
 ## Example setup
 ![](https://user-images.githubusercontent.com/25158423/57262658-0d4c5b00-703b-11e9-9e0d-bdf7cb8f942a.gif)
 
@@ -56,11 +60,19 @@ yarn android
 
 
 ## Usage
-```javascript
-import RNCAndroidprogressbar from '@react-native-community/progress-bar-android';
+```jsx
+import { View } from 'react-native'
+import { ProgressBar } from '@react-native-community/progress-bar-android';
 
-// TODO: What to do with the module?
-RNCAndroidprogressbar;
+
+export const Example = () => {
+	return (
+		<View>
+			<ProgressBar styleAttr="Horizontal" />
+		</View>
+	)
+}
+
 ```
   
 [lean-core-badge]: https://img.shields.io/badge/Lean%20Core-Extracted-brightgreen.svg?style=flat-square

@@ -10,11 +10,11 @@
 
 'use strict';
 
-const React = require('React');
+import React from 'react';
 
-const ProgressBarAndroidNativeComponent = require('ProgressBarAndroidNativeComponent');
+import ProgressBarAndroidNativeComponent from './RNCProgressBarAndroidNativeComponent';
 
-import type {ViewProps} from 'ViewPropTypes';
+import type {ViewProps} from 'react-native';
 
 export type ProgressBarAndroidProps = $ReadOnly<{|
   ...ViewProps,

@@ -1,6 +1,1 @@
-
-import { NativeModules } from 'react-native';
-
-const { RNCAndroidprogressbar } = NativeModules;
-
-export default RNCAndroidprogressbar;
+export { default as ProgressBarAndroid } from './js/RNCProgressBarAndroid'

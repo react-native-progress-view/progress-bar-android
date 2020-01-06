@@ -10,12 +10,11 @@
 
 'use strict';
 
-var PropTypes = require('prop-types');
-var React = require('react');
-var ReactNative = require('react-native');
-var {ScrollView, StyleSheet, View} = ReactNative;
+import React from 'react';
+import PropTypes from 'prop-types';
+import {ScrollView, StyleSheet, View} from 'react-native';
 
-var RNTesterTitle = require('./RNTesterTitle');
+import RNTesterTitle from './RNTesterTitle';
 
 class RNTesterPage extends React.Component<{
   noScroll?: boolean,
@@ -74,4 +73,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = RNTesterPage;
+export default RNTesterPage;

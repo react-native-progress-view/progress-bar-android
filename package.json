@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:android": "adb shell am start -n com.androidprogressbar/.MainActivity",
-    "build:android": "cd example/android && ./gradlew installDebug && cd ../.. && npm run start:android",
+    "build:android": "cd example/android && ./gradlew clean assembleDebug",
     "test": "jest",
-    "validate:eslint": "eslint 'js/**/*.js' && eslint 'example/**/*.js'"
+    "lint": "eslint 'js/**/*.js' && eslint 'example/**/*.js'"
   },
   "keywords": [
     "react-native",

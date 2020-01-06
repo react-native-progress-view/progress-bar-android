@@ -133,28 +133,28 @@ jobs:
         command: yarn build:android
     - save-cache: *save-gradle-cache
   
-  # ios-checkout:
-  #   <<: *macos_defaults
-  #   steps:
-  #   - checkout
-  #   - restore-cache: *restore-yarn-cache
-  #   - run: rm -rf node_modules
-  #   - run: yarn cache clean
-  #   - run: *yarn
-  #   - save-cache: *save-yarn-cache
-  #   - persist_to_workspace:
-  #       root: .
-  #       paths: .
+  ios-checkout:
+    <<: *macos_defaults
+    steps:
+    - checkout
+    - restore-cache: *restore-yarn-cache
+    - run: rm -rf node_modules
+    - run: yarn cache clean
+    - run: *yarn
+    - save-cache: *save-yarn-cache
+    - persist_to_workspace:
+        root: .
+        paths: .
 
-  # ios-compile:
-  #   <<: *macos_defaults
-  #   steps:
-  #   - attach_workspace:
-  #       at: ~/react-native-progress-bar-android
-  #   - run:
-  #       name: Build example app
-  #       command: |-
-  #         react-native run-ios --project-path example/ios
+  ios-compile:
+    <<: *macos_defaults
+    steps:
+    - attach_workspace:
+        at: ~/react-native-progress-bar-android
+    - run:
+        name: Build example app
+        command: |-
+          react-native run-ios --project-path example/ios
 
 # -------------------------
 #        WORKFLOWS

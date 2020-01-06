@@ -10,9 +10,8 @@
 
 'use strict';
 
-var React = require('react');
-var ReactNative = require('react-native');
-var {StyleSheet, Text, View} = ReactNative;
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 
 class RNTesterTitle extends React.Component<$FlowFixMeProps> {
   render() {
@@ -41,4 +40,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = RNTesterTitle;
+export default RNTesterTitle;

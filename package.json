@@ -41,7 +41,6 @@
     "jest": "^24.7.1",
     "metro-react-native-babel-preset": "^0.53.1",
     "prettier": "^1.17.0",
-    "react-timer-mixin": "^0.13.4",
     "react-test-renderer": "16.8.3"
   },
   "jest": {

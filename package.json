@@ -24,7 +24,7 @@
     "index.js"
   ],
   "author": "",
-  "license": "",
+  "license": "MIT",
   "peerDependencies": {
     "react": ">=16.8.6",
     "react-native": ">=0.60.0"

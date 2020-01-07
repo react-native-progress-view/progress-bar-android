@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Progress Bar component for React Native",
   "main": "index.js",
+  "types":"index.d.ts",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:android": "adb shell am start -n com.androidprogressbar/.MainActivity",
@@ -26,7 +27,8 @@
     "android",
     "ios",
     "js",
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "author": "Wagner Maciel <wagnermaciel@google.com>",
   "contributors": [
@@ -43,6 +45,7 @@
     "@babel/core": "^7.4.3",
     "@babel/runtime": "^7.4.3",
     "@react-native-community/eslint-config": "0.0.5",
+    "@types/react": "^16.9.17",
     "babel-jest": "^24.9.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "^5.16.0",
@@ -52,7 +55,8 @@
     "prettier": "^1.17.0",
     "react": "16.9.0",
     "react-native": "^0.61.5",
-    "react-test-renderer": "16.8.3"
+    "react-test-renderer": "16.8.3",
+    "typescript": "^3.7.4"
   },
   "jest": {
     "preset": "react-native"

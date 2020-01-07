@@ -175,10 +175,9 @@ workflows:
     # - type-check:
     #     requires:
     #     - linux-checkout
-    # TODO: uncomment after tests are fixed
-    # - jest:
-    #     requires:
-    #     - linux-checkout
+    - jest:
+        requires:
+        - linux-checkout
     - android-compile:
         requires:
         - linux-checkout

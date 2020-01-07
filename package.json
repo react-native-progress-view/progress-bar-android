@@ -1,7 +1,7 @@
 {
   "name": "@react-native-community/progress-bar-android",
   "version": "1.0.0",
-  "description": "React Native Android Progress Bar",
+  "description": "Progress Bar component for React Native",
   "main": "index.js",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -9,6 +9,11 @@
     "build:android": "cd example/android && ./gradlew clean assembleDebug",
     "test": "jest",
     "lint": "eslint 'js/**/*.js' && eslint 'example/**/*.js'"
+  },
+  "homepage": "https://github.com/react-native-community/react-native-progress-bar-android#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-native-community/react-native-progress-bar-android.git"
   },
   "keywords": [
     "react-native",
@@ -23,7 +28,11 @@
     "js",
     "index.js"
   ],
-  "author": "",
+  "author": "Wagner Maciel <wagnermaciel@google.com>",
+  "contributors": [
+    "Vivian Fang <vf608@nyu.edu>",
+    "Jesse Katsumata <jesse.katsumata@gmail.com>"
+  ],
   "license": "MIT",
   "peerDependencies": {
     "react": ">=16.8.6",
@@ -47,5 +56,8 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

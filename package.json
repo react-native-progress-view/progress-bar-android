@@ -34,13 +34,15 @@
     "@babel/core": "^7.4.3",
     "@babel/runtime": "^7.4.3",
     "@react-native-community/eslint-config": "0.0.5",
-    "babel-jest": "^24.7.1",
+    "babel-jest": "^24.9.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "jest": "^24.7.1",
+    "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.53.1",
     "prettier": "^1.17.0",
+    "react": "16.9.0",
+    "react-native": "^0.61.5",
     "react-test-renderer": "16.8.3"
   },
   "jest": {

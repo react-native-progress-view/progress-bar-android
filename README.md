@@ -76,7 +76,7 @@ Run the following commands
       implementation project(':@react-native-community_progress-bar-android')
   	```
 
-</detail>
+</details>
 
 ## Usage
 ```jsx

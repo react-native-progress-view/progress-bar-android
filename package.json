@@ -1,6 +1,6 @@
 {
   "name": "@react-native-community/progress-bar-android",
-  "version": "1.0.1-beta.3",
+  "version": "1.0.1",
   "description": "Progress Bar component for React Native",
   "main": "index.js",
   "types": "index.d.ts",

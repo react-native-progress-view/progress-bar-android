@@ -1,6 +1,10 @@
 
 # @react-native-community/progress-bar-android
 
+[![Build Status][build-badge]][build]
+[![Version][version-badge]][package]
+![Supports Android][support-badge]
+[![MIT License][license-badge]][license]
 [![Lean Core Badge][lean-core-badge]][lean-core-issue]
 
 ## Getting started
@@ -31,19 +35,33 @@ yarn android
 
 ### Mostly automatic installation
 
+- `react-native >= 0.60`
+
+ The package is [automatically linked](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) when building the app. All you need to do is:
+
+```	```
+cd ios && pod install
+```	```
+
+- `react-native < 0.59`
+
+Run the following commands
 `$ react-native link @react-native-community/progress-bar-android`
 
 ### Manual installation
 
-
-#### iOS
+<details>
+<summary>Manually linking the library - iOS</summary>
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
 2. Go to `node_modules` ➜ `@react-native-community/progress-bar-android` and add `RNCAndroidprogressbar.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNCAndroidprogressbar.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+4. Run your project (`Cmd+R`)
 
-#### Android
+</details>
+
+<details>
+<summary>Manually link the library - android</summary>
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
   - Add `import com.reactnativecommunity.androidprogressbar.RNCAndroidprogressbarPackage;` to the imports at the top of the file
@@ -58,6 +76,7 @@ yarn android
       implementation project(':@react-native-community_progress-bar-android')
   	```
 
+</details>
 
 ## Usage
 ```jsx
@@ -75,5 +94,12 @@ export const Example = () => {
 
 ```
   
+[build-badge]: https://img.shields.io/circleci/project/github/react-native-community/react-native-progress-bar-android/master.svg?style=flat-square
+[build]: https://circleci.com/gh/react-native-community/react-native-progress-bar-android
+[version-badge]: https://img.shields.io/npm/v/@react-native-community/progress-bar-android.svg?style=flat-square
+[package]: https://www.npmjs.com/package/@react-native-community/progress-bar-android
+[support-badge]:https://img.shields.io/badge/platforms-android-lightgrey.svg?style=flat-square
+[license-badge]: https://img.shields.io/npm/l/@react-native-community/progress-bar-android.svg?style=flat-square
+[license]: https://opensource.org/licenses/MIT
 [lean-core-badge]: https://img.shields.io/badge/Lean%20Core-Extracted-brightgreen.svg?style=flat-square
 [lean-core-issue]: https://github.com/facebook/react-native/issues/23313

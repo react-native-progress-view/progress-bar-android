@@ -1,9 +1,9 @@
 {
   "name": "@react-native-community/progress-bar-android",
-  "version": "1.0.0",
+  "version": "1.0.1-beta.3",
   "description": "Progress Bar component for React Native",
   "main": "index.js",
-  "types":"index.d.ts",
+  "types": "index.d.ts",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:android": "adb shell am start -n com.androidprogressbar/.MainActivity",

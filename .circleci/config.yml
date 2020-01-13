@@ -1,55 +1,9 @@
 # -------------------------
-#        DEFAULTS
-# -------------------------
-defaults: &defaults
-  working_directory: ~/react-native-progress-bar-android
-  environment:
-  - GIT_COMMIT_DESC: git log --format=oneline -n 1 $CIRCLE_SHA1
-
-# LINUX
-linux_defaults: &linux_defaults
-  <<: *defaults
-  docker:
-  - image: circleci/node:8
-  environment:
-  - PATH: "/opt/yarn/yarn-v1.5.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-
-# ANDROID
-android_defaults: &android_defaults
-  <<: *defaults
-  docker:
-  - image: circleci/android:api-27-node8-alpha
-  resource_class: "medium"
-  environment:
-  - TERM: "dumb"
-  - ADB_INSTALL_TIMEOUT: 10
-  - _JAVA_OPTIONS: "-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
-  - GRADLE_OPTS: '-Dorg.gradle.daemon=false -Dorg.gradle.jvmargs="-XX:+HeapDumpOnOutOfMemoryError"'
-  - BUILD_THREADS: 2
-
-# MACOS
-macos_defaults: &macos_defaults
-  <<: *defaults
-  resource_class: "medium"
-  macos:
-    xcode: "10.1.0"
-
-# -------------------------
 #         ALIASES
 # -------------------------
 
 aliases:
 # CACHE
-- &restore-yarn-cache
-  keys:
-  - yarn-cache-{{ arch }}-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
-  - yarn-cache-{{ arch }}
-- &save-yarn-cache
-  paths:
-  - ~/.cache/yarn
-  - ~/Library/Detox/ios
-  key: yarn-cache-{{ arch }}-{{ checksum "package.json" }}-{{ checksum "yarn.lock" }}
-
 - &restore-gradle-cache
   keys:
   - gradle-cache-{{ checksum "android/build.gradle" }}-{{ checksum "example/android/build.gradle" }}-{{ checksum "example/android/app/build.gradle" }}
@@ -57,12 +11,6 @@ aliases:
   paths:
   - ~/.gradle
   key: gradle-cache-{{ checksum "android/build.gradle" }}-{{ checksum "example/android/build.gradle" }}-{{ checksum "example/android/app/build.gradle" }}
-
-# INSTALLATION
-- &yarn
-  name: Yarn Install
-  command: |
-    yarn install --network-concurrency 1 --non-interactive --cache-folder ~/.cache/yarn & wait
 
 # ANALYSE
 - &eslint
@@ -80,49 +28,50 @@ aliases:
 # -------------------------
 #          JOBS
 # -------------------------
-version: 2
+version: 2.1
+orbs:
+  rn: react-native-community/react-native@2.0.1
+
 jobs:
   # Set up a Linux environment for downstream jobs
   linux-checkout:
-    <<: *linux_defaults
+    executor: rn/linux_js
     steps:
+    - attach_workspace:
+        at: .
     - checkout
-    - restore-cache: *restore-yarn-cache
-    - run: rm -rf node_modules
-    - run: yarn cache clean
-    - run: *yarn
-    - save-cache: *save-yarn-cache
+    - rn/yarn_install
     - persist_to_workspace:
         root: .
         paths: .
 
   eslint:
-    <<: *linux_defaults
+    executor: rn/linux_js
     steps:
     - attach_workspace:
-        at: ~/react-native-progress-bar-android
+        at: .
     - run: *eslint
 
   # type-check:
   #   <<: *linux_defaults
   #   steps:
   #   - attach_workspace:
-  #       at: ~/react-native-progress-bar-android
+  #       at: .
   #   - run: *type-check
   
   jest:
-    <<: *linux_defaults
+    executor: rn/linux_js
     steps:
     - attach_workspace:
-        at: ~/react-native-progress-bar-android
+        at: .
     - run: *jest
   
   android-compile:
-    <<: *android_defaults
+    executor: rn/linux_android
     steps:
     - attach_workspace:
-        at: ~/react-native-progress-bar-android
-    - restore-cache: *restore-gradle-cache
+        at: .
+    - restore_cache: *restore-gradle-cache
     - run:
         name: Accept Android licences
         command: |-
@@ -135,26 +84,22 @@ jobs:
           yarn install
           cd android
           ./gradlew clean assembleDebug
-    - save-cache: *save-gradle-cache
+    - save_cache: *save-gradle-cache
   
   ios-checkout:
-    <<: *macos_defaults
+    executor: rn/macos
     steps:
     - checkout
-    - restore-cache: *restore-yarn-cache
-    - run: rm -rf node_modules
-    - run: yarn cache clean
-    - run: *yarn
-    - save-cache: *save-yarn-cache
+    - rn/yarn_install
     - persist_to_workspace:
         root: .
         paths: .
 
   ios-compile:
-    <<: *macos_defaults
+    executor: rn/macos
     steps:
     - attach_workspace:
-        at: ~/react-native-progress-bar-android
+        at: .
     - run:
         name: Build example app
         command: |-

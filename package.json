@@ -9,7 +9,8 @@
     "start:android": "adb shell am start -n com.androidprogressbar/.MainActivity",
     "build:android": "cd example/android && ./gradlew clean assembleDebug",
     "test": "jest",
-    "lint": "eslint 'js/**/*.js' && eslint 'example/**/*.js'"
+    "lint": "eslint 'js/**/*.js' && eslint 'example/**/*.js'",
+    "type-check":"tsc --noEmit"
   },
   "homepage": "https://github.com/react-native-community/react-native-progress-bar-android#readme",
   "repository": {

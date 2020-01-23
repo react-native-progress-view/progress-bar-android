@@ -9,7 +9,8 @@
     "start:android": "adb shell am start -n com.androidprogressbar/.MainActivity",
     "build:android": "cd example/android && ./gradlew clean assembleDebug",
     "test": "jest",
-    "lint": "eslint 'js/**/*.js' && eslint 'example/**/*.js'"
+    "lint": "eslint 'js/**/*.js' && eslint 'example/**/*.js'",
+    "type-check":"tsc --noEmit"
   },
   "homepage": "https://github.com/react-native-community/react-native-progress-bar-android#readme",
   "repository": {
@@ -45,14 +46,15 @@
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/runtime": "^7.4.3",
-    "@react-native-community/eslint-config": "0.0.5",
+    "@react-native-community/eslint-config": "0.0.6",
+    "@react-native-community/eslint-plugin": "^1.0.0",
     "@types/react": "^16.9.17",
-    "babel-jest": "^24.9.0",
+    "babel-jest": "^25.1.0",
     "babel-plugin-module-resolver": "^3.2.0",
-    "eslint": "^5.16.0",
+    "eslint": "5",
     "eslint-plugin-prettier": "^3.0.1",
-    "jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.53.1",
+    "jest": "^25.1.0",
+    "metro-react-native-babel-preset": "^0.58.0",
     "prettier": "^1.17.0",
     "react": "16.9.0",
     "react-native": "^0.61.5",

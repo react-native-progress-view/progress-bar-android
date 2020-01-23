@@ -7,46 +7,39 @@
 [![MIT License][license-badge]][license]
 [![Lean Core Badge][lean-core-badge]][lean-core-issue]
 
+Progress Bar Component for Android Devices
+
+![Screenshot](https://user-images.githubusercontent.com/25158423/57262658-0d4c5b00-703b-11e9-9e0d-bdf7cb8f942a.gif)
+
 ## Getting started
 
-`$ npm install @react-native-community/progress-bar-android --save`
+```
+$ npm install @react-native-community/progress-bar-android --save
+```
 
 or
 
-`$ yarn add @react-native-community/progress-bar-android`
-
-## Example setup
-![](https://user-images.githubusercontent.com/25158423/57262658-0d4c5b00-703b-11e9-9e0d-bdf7cb8f942a.gif)
-
-### Android
-1. Install dependencies
-1. Install dependencies for example folder
-1. Start the metro bundler
-1. Build the application
-
-```sh
-yarn install
-cd example
-# inside example
-yarn install
-yarn start
-yarn android
+```
+$ yarn add @react-native-community/progress-bar-android
 ```
 
-### Mostly automatic installation
+### Linking
 
-- `react-native >= 0.60`
+- React Native 0.60+
 
  The package is [automatically linked](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) when building the app. All you need to do is:
 
-```	```
-cd ios && pod install
-```	```
+```
+$ cd ios && pod install
+```
 
-- `react-native < 0.59`
+- React Native <= 0.59
 
 Run the following commands
-`$ react-native link @react-native-community/progress-bar-android`
+
+```
+$ react-native link @react-native-community/progress-bar-android
+```
 
 ### Manual installation
 
@@ -77,6 +70,23 @@ Run the following commands
   	```
 
 </details>
+
+## Trying out this package in `example` 
+
+### Android
+1. Install dependencies
+1. Install dependencies for example folder
+1. Start the metro bundler
+1. Build the application
+
+```sh
+yarn install
+cd example
+# inside example
+yarn install
+yarn start
+yarn android
+```
 
 ## Usage
 ```jsx

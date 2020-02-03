@@ -10,7 +10,9 @@ describe('<ProgressBar />', () => {
   });
 
   it('renders Horizontal ProgressBar', () => {
-    const tree = renderer.create(<ProgressBar styleAttr="Horizontal" />).toJSON();
+    const tree = renderer
+      .create(<ProgressBar styleAttr="Horizontal" />)
+      .toJSON();
 
     expect(tree).toMatchSnapshot();
   });

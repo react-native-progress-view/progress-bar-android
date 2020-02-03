@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.description  = package['description']
   s.platform     = :ios, "9.0"
 
-  s.source       = { :git => "https://github.com/react-native-community/react-native-progress-bar-android.git", :tag => "master" }
+  s.source       = { :git => "https://github.com/react-native-community/react-native-progress-bar-android.git", :tag => "v#{s.version}" }
   s.source_files  = "ios/RNCAndroidprogressbar/**/*.{h,m}"
   s.requires_arc = true
 

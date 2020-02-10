@@ -104,8 +104,8 @@ export const Example = () => {
 
 ```
   
-[build-badge]: https://img.shields.io/circleci/project/github/react-native-community/react-native-progress-bar-android/master.svg?style=flat-square
-[build]: https://circleci.com/gh/react-native-community/react-native-progress-bar-android
+[build-badge]: https://img.shields.io/circleci/project/github/react-native-community/progress-bar-android/master.svg?style=flat-square
+[build]: https://circleci.com/gh/react-native-community/progress-bar-android
 [version-badge]: https://img.shields.io/npm/v/@react-native-community/progress-bar-android.svg?style=flat-square
 [package]: https://www.npmjs.com/package/@react-native-community/progress-bar-android
 [support-badge]:https://img.shields.io/badge/platforms-android-lightgrey.svg?style=flat-square

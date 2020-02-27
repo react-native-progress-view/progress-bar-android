@@ -53,3 +53,4 @@ bundles/
 android/gradle
 android/gradlew
 android/gradlew.bat
+android/.settings

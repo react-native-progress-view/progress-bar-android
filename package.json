@@ -6,7 +6,7 @@
   "types": "index.d.ts",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "start:android": "adb shell am start -n com.androidprogressbar/.MainActivity",
+    "start:android": "adb shell am start -n com.progressbar/.MainActivity",
     "build:android": "cd example/android && ./gradlew clean assembleDebug",
     "test": "jest",
     "lint": "eslint 'js/**/*.js' 'example/**/*.js'",

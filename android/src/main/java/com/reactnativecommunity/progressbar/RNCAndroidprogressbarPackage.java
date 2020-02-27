@@ -1,5 +1,5 @@
 
-package com.reactnativecommunity.androidprogressbar;
+package com.reactnativecommunity.progressbar;
 
 import java.util.Arrays;
 import java.util.Collections;

@@ -17,8 +17,8 @@ import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewManagerDelegate;
 import com.facebook.react.uimanager.ViewProps;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.facebook.react.viewmanagers.AndroidProgressBarManagerDelegate;
-import com.facebook.react.viewmanagers.AndroidProgressBarManagerInterface;
+import com.reactnativecommunity.progressbar.viewmanagers.AndroidProgressBarManagerDelegate;
+import com.reactnativecommunity.progressbar.viewmanagers.AndroidProgressBarManagerInterface;
 
 
 /**

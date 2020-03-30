@@ -53,3 +53,7 @@ bundles/
 android/gradle
 android/gradlew
 android/gradlew.bat
+
+# eclipse build file
+.project
+.settings

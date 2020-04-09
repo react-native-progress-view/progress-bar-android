@@ -13,7 +13,7 @@ import React from 'react';
 
 import ProgressBarAndroidNativeComponent from './RNCProgressBarAndroidNativeComponent';
 
-import type {ViewProps} from 'react-native';
+import type {ViewProps} from 'react-native/Libraries/Components/View/ViewPropTypes';
 
 export type ProgressBarAndroidProps = $ReadOnly<{|
   ...ViewProps,
@@ -87,16 +87,10 @@ const ProgressBarAndroid = (
 
 const ProgressBarAndroidToExport = React.forwardRef(ProgressBarAndroid);
 
-/* $FlowFixMe(>=0.89.0 site=react_native_android_fb) This comment suppresses an
- * error found when Flow v0.89 was deployed. To see the error, delete this
- * comment and run Flow. */
 ProgressBarAndroidToExport.defaultProps = {
   styleAttr: 'Normal',
   indeterminate: true,
   animating: true,
 };
 
-/* $FlowFixMe(>=0.89.0 site=react_native_android_fb) This comment suppresses an
- * error found when Flow v0.89 was deployed. To see the error, delete this
- * comment and run Flow. */
 export default (ProgressBarAndroidToExport: ProgressBarAndroidNativeComponent);

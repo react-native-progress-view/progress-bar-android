@@ -31,4 +31,4 @@ export type ProgressBarAndroidProps = {
    */
   animating?: boolean
 }
-export class ProgressBarAndroid extends React.Component<ProgressBarAndroidProps> {}
+export class ProgressBar extends React.Component<ProgressBarAndroidProps> {}

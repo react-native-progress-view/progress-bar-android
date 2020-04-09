@@ -18,7 +18,7 @@ import type {ViewProps} from 'react-native/Libraries/Components/View/ViewPropTyp
 export type ProgressBarAndroidProps = $ReadOnly<{|
   ...ViewProps,
 
-  /**import {type NativeComponentType} from '../../Utilities/codegenNativeComponent';
+  /**
    * Style of the ProgressBar and whether it shows indeterminate progress (e.g. spinner).
    *
    * `indeterminate` can only be false if `styleAttr` is Horizontal, and requires a

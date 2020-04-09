@@ -10,7 +10,8 @@
     "build:android": "cd example/android && ./gradlew clean assembleDebug",
     "test": "jest",
     "lint": "eslint 'js/**/*.js' 'example/**/*.js'",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "flow": "flow"
   },
   "homepage": "https://github.com/react-native-community/react-native-progress-bar-android#readme",
   "repository": {
@@ -51,6 +52,7 @@
     "babel-jest": "^25.1.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "6.8.0",
+    "flow-bin": "0.105.2",
     "jest": "^25.2.3",
     "metro-react-native-babel-preset": "^0.58.0",
     "react": "16.9.0",

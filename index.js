@@ -1,1 +1,1 @@
-export { default as ProgressBar } from './js/RNCProgressBarAndroid'
+export {default as ProgressBar} from './js/RNCProgressBarAndroid';

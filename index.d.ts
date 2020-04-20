@@ -1,15 +1,24 @@
-import React from 'react';
-export type ProgressBarAndroidProps = {
+import * as React from 'react';
+import {ViewProps} from 'react-native';
+
+export type ProgressBarAndroidProps = ViewProps & {
   /**
    * styleAttr: style of ProgressBar
    *
    * default: 'Normal'
    */
-  styleAttr?: 'Normal'| 'Horizontal' | 'Small' | 'Large' | 'Inverse' |'SmallInverse' |'LargeInverse'
+  styleAttr?:
+    | 'Normal'
+    | 'Horizontal'
+    | 'Small'
+    | 'Large'
+    | 'Inverse'
+    | 'SmallInverse'
+    | 'LargeInverse';
   /**
    * color: Color of the ProgressBar
    */
-  color?: string
+  color?: string;
   /**
    * indeterminate: boolean flag for indeterminate mode.
    *
@@ -17,18 +26,18 @@ export type ProgressBarAndroidProps = {
    *
    * default: false
    */
-  indeterminate?: boolean
+  indeterminate?: boolean;
   /**
    * progress: sets the amount of progress in 0-100.
    *
    * 25 will show that a progress bar is 25% complete
    */
-  progress?: number
+  progress?: number;
   /**
    * animating: weather ProgressBar is animated or not.
    *
    * default: true
    */
-  animating?: boolean
-}
+  animating?: boolean;
+};
 export class ProgressBar extends React.Component<ProgressBarAndroidProps> {}

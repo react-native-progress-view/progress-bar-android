@@ -5,7 +5,6 @@
 #import <React/RCTBridgeModule.h>
 #endif
 
-@interface RNCAndroidprogressbar : NSObject <RCTBridgeModule>
+@interface RNCProgressBar : NSObject <RCTBridgeModule>
 
 @end
-  

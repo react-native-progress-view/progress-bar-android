@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ProgressBar /> renders Horizontal ProgressBar 1`] = `
-<AndroidProgressBar
+<RNCProgressBar
   animating={true}
   indeterminate={true}
   styleAttr="Horizontal"
@@ -9,7 +9,7 @@ exports[`<ProgressBar /> renders Horizontal ProgressBar 1`] = `
 `;
 
 exports[`<ProgressBar /> renders Inverse ProgressBar 1`] = `
-<AndroidProgressBar
+<RNCProgressBar
   animating={true}
   indeterminate={true}
   styleAttr="Normal"
@@ -18,7 +18,7 @@ exports[`<ProgressBar /> renders Inverse ProgressBar 1`] = `
 `;
 
 exports[`<ProgressBar /> renders enabled ProgressBar 1`] = `
-<AndroidProgressBar
+<RNCProgressBar
   animating={true}
   indeterminate={true}
   styleAttr="Normal"

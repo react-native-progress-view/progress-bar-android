@@ -1,7 +1,7 @@
 
-#import "RNCAndroidprogressbar.h"
+#import "RNCProgressBar.h"
 
-@implementation RNCAndroidprogressbar
+@implementation RNCProgressBar
 
 - (dispatch_queue_t)methodQueue
 {

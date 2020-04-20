@@ -20,16 +20,16 @@ import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewProps;
 
 /**
- * Manages instances of ProgressBar. ProgressBar is wrapped in a ProgressBarContainerView because
- * the style of the ProgressBar can only be set in the constructor; whenever the style of a
- * ProgressBar changes, we have to drop the existing ProgressBar (if there is one) and create a new
- * one with the style given.
+ * Manages instances of ProgressBar. ProgressBar is wrapped in a
+ * ProgressBarContainerView because the style of the ProgressBar can only be set
+ * in the constructor; whenever the style of a ProgressBar changes, we have to
+ * drop the existing ProgressBar (if there is one) and create a new one with the
+ * style given.
  */
 @ReactModule(name = ReactProgressBarViewManager.REACT_CLASS)
-public class ReactProgressBarViewManager extends
-    BaseViewManager<ProgressBarContainerView, ProgressBarShadowNode> {
+public class ReactProgressBarViewManager extends BaseViewManager<ProgressBarContainerView, ProgressBarShadowNode> {
 
-  public static final String REACT_CLASS = "AndroidProgressBar";
+  public static final String REACT_CLASS = "RNCProgressBar";
 
   /* package */ static final String PROP_STYLE = "styleAttr";
   /* package */ static final String PROP_INDETERMINATE = "indeterminate";
@@ -41,9 +41,10 @@ public class ReactProgressBarViewManager extends
   private static Object sProgressBarCtorLock = new Object();
 
   /**
-   * We create ProgressBars on both the UI and shadow threads. There is a race condition in the
-   * ProgressBar constructor that may cause crashes when two ProgressBars are constructed at the
-   * same time on two different threads. This static ctor wrapper protects against that.
+   * We create ProgressBars on both the UI and shadow threads. There is a race
+   * condition in the ProgressBar constructor that may cause crashes when two
+   * ProgressBars are constructed at the same time on two different threads. This
+   * static ctor wrapper protects against that.
    */
   public static ProgressBar createProgressBar(Context context, int style) {
     synchronized (sProgressBarCtorLock) {
@@ -108,11 +109,10 @@ public class ReactProgressBarViewManager extends
 
   /* package */ static int getStyleFromString(@Nullable String styleStr) {
     if (styleStr == null) {
-      throw new JSApplicationIllegalArgumentException(
-          "ProgressBar needs to have a style, null received");
+      throw new JSApplicationIllegalArgumentException("ProgressBar needs to have a style, null received");
     } else if (styleStr.equals("Horizontal")) {
       return android.R.attr.progressBarStyleHorizontal;
-    }  else if (styleStr.equals("Small")) {
+    } else if (styleStr.equals("Small")) {
       return android.R.attr.progressBarStyleSmall;
     } else if (styleStr.equals("Large")) {
       return android.R.attr.progressBarStyleLarge;

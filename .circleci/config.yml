@@ -25,6 +25,11 @@ aliases:
   name: Jest Unit Tests
   command: yarn test
 
+- &flow
+  name: Flow Type Check
+  command: yarn flow
+
+
 # -------------------------
 #          JOBS
 # -------------------------
@@ -73,6 +78,15 @@ jobs:
     - attach_workspace:
         at: .
     - run: *jest
+
+  flow:
+    executor:
+      name: rn/linux_js
+      node_version: '10'
+    steps:
+    - attach_workspace:
+        at: .
+    - run: *flow
   
   android-compile:
     executor: rn/linux_android
@@ -128,6 +142,9 @@ workflows:
         requires:
         - linux-checkout
     - jest:
+        requires:
+        - linux-checkout
+    - flow:
         requires:
         - linux-checkout
     - android-compile:

@@ -14,13 +14,11 @@ Progress Bar Component for Android Devices
 ## Getting started
 
 ```
-$ npm install @react-native-community/progress-bar-android --save
-```
+npm install @react-native-community/progress-bar-android --save
 
-or
+# or 
 
-```
-$ yarn add @react-native-community/progress-bar-android
+yarn add @react-native-community/progress-bar-android
 ```
 
 ### Linking
@@ -30,7 +28,7 @@ $ yarn add @react-native-community/progress-bar-android
  The package is [automatically linked](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) when building the app. All you need to do is:
 
 ```
-$ cd ios && pod install
+npx pod-install
 ```
 
 - React Native <= 0.59

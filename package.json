@@ -42,7 +42,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "react-timer-mixin": "^0.13.4",
     "@babel/core": "^7.10.3",
     "@babel/runtime": "^7.10.3",
     "@react-native-community/eslint-config": "^1.0.0",
@@ -50,12 +49,13 @@
     "babel-jest": "^25.1.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "6.8.0",
-    "flow-bin": "0.105.2",
+    "flow-bin": "^0.127.0",
     "jest": "^25.2.3",
     "metro-react-native-babel-preset": "^0.58.0",
     "react": "16.9.0",
     "react-native": "^0.61.5",
     "react-test-renderer": "16.8.3",
+    "react-timer-mixin": "^0.13.4",
     "typescript": "^3.7.4"
   },
   "jest": {

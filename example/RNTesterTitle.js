@@ -4,25 +4,27 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- * @flow strict-local
+ * @flow
  */
 
 'use strict';
 
-import React from 'react';
+import * as React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-class RNTesterTitle extends React.Component<$FlowFixMeProps> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}>{this.props.title}</Text>
-      </View>
-    );
-  }
-}
+type Props = $ReadOnly<{|
+  title: string,
+|}>;
 
-var styles = StyleSheet.create({
+const RNTesterTitle: React.ComponentType<Props> = ({title}) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>{title}</Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
   container: {
     borderRadius: 4,
     borderWidth: 0.5,

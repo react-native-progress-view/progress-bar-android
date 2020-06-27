@@ -9,56 +9,48 @@
 
 'use strict';
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 
 import RNTesterTitle from './RNTesterTitle';
 
-class RNTesterPage extends React.Component<{
+type Props = $ReadOnly<{
   noScroll?: boolean,
   noSpacer?: boolean,
-}> {
-  static propTypes = {
-    noScroll: PropTypes.bool,
-    noSpacer: PropTypes.bool,
-  };
+  title?: string,
+  children: React.Node,
+}>;
 
-  render() {
-    var ContentWrapper;
-    var wrapperProps = {};
-    if (this.props.noScroll) {
-      ContentWrapper = ((View: any): React.ComponentType<any>);
-    } else {
-      ContentWrapper = (ScrollView: React.ComponentType<any>);
-      // $FlowFixMe found when converting React.createClass to ES6
-      wrapperProps.automaticallyAdjustContentInsets = !this.props.title;
-      wrapperProps.keyboardShouldPersistTaps = 'handled';
-      wrapperProps.keyboardDismissMode = 'interactive';
-    }
-    /* $FlowFixMe(>=0.68.0 site=react_native_fb) This comment suppresses an
-     * error found when Flow v0.68 was deployed. To see the error delete this
-     * comment and run Flow. */
-    var title = this.props.title ? (
-      <RNTesterTitle title={this.props.title} />
-    ) : null;
-    var spacer = this.props.noSpacer ? null : <View style={styles.spacer} />;
-    return (
-      <View style={styles.container}>
-        {title}
-        <ContentWrapper style={styles.wrapper} {...wrapperProps}>
-          {
-            // $FlowFixMe found when converting React.createClass to ES6
-            this.props.children
-          }
-          {spacer}
-        </ContentWrapper>
-      </View>
-    );
+const RNTesterPage: React.ComponentType<Props> = ({
+  noScroll,
+  noSpacer,
+  title,
+  children,
+}) => {
+  let ContentWrapper;
+  let wrapperProps = {};
+  if (noScroll) {
+    ContentWrapper = ((View: any): React.ComponentType<any>);
+  } else {
+    ContentWrapper = (ScrollView: React.ComponentType<any>);
+    // $FlowFixMe found when converting React.createClass to ES6
+    wrapperProps.automaticallyAdjustContentInsets = !title;
+    wrapperProps.keyboardShouldPersistTaps = 'handled';
+    wrapperProps.keyboardDismissMode = 'interactive';
   }
-}
 
-var styles = StyleSheet.create({
+  return (
+    <View style={styles.container}>
+      {title ? <RNTesterTitle title={title} /> : null}
+      <ContentWrapper style={styles.wrapper} {...wrapperProps}>
+        {children}
+        {noSpacer ? null : <View style={styles.spacer} />}
+      </ContentWrapper>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
   container: {
     backgroundColor: '#e9eaed',
     flex: 1,

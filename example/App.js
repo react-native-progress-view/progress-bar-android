@@ -9,8 +9,8 @@
 
 'use strict';
 
-import {ProgressBar} from '@react-native-community/progress-bar-android';
-import React from 'react';
+import * as React from 'react';
+import {ProgressBar} from '../js';
 import createReactClass from 'create-react-class';
 import RNTesterBlock from './RNTesterBlock';
 import RNTesterPage from './RNTesterPage';
@@ -39,39 +39,30 @@ const MovingBar = createReactClass({
   },
 });
 
-export default class ProgressBarAndroidExample extends React.Component<{}> {
-  static title = '<ProgressBarAndroid>';
-  static description = 'Horizontal bar to show the progress of some operation.';
+const App: React.ComponentType<{}> = () => {
+  return (
+    <RNTesterPage title="ProgressBar Examples">
+      <RNTesterBlock title="Horizontal Indeterminate ProgressBar">
+        {/* $FlowFixMe(>=0.78.0 site=react_native_android_fb) This issue was
+         * found when making Flow check .android.js files. */}
+        <ProgressBar styleAttr="Horizontal" />
+      </RNTesterBlock>
 
-  render() {
-    return (
-      <RNTesterPage title="ProgressBar Examples">
-        <RNTesterBlock title="Horizontal Indeterminate ProgressBar">
-          {/* $FlowFixMe(>=0.78.0 site=react_native_android_fb) This issue was
-           * found when making Flow check .android.js files. */}
-          <ProgressBar styleAttr="Horizontal" />
-        </RNTesterBlock>
+      <RNTesterBlock title="Horizontal ProgressBar">
+        <MovingBar styleAttr="Horizontal" indeterminate={false} />
+      </RNTesterBlock>
 
-        <RNTesterBlock title="Horizontal ProgressBar">
-          <MovingBar styleAttr="Horizontal" indeterminate={false} />
-        </RNTesterBlock>
+      <RNTesterBlock title="Horizontal Black Indeterminate ProgressBar">
+        {/* $FlowFixMe(>=0.78.0 site=react_native_android_fb) This issue was
+         * found when making Flow check .android.js files. */}
+        <ProgressBar styleAttr="Horizontal" color="black" />
+      </RNTesterBlock>
 
-        <RNTesterBlock title="Horizontal Black Indeterminate ProgressBar">
-          {/* $FlowFixMe(>=0.78.0 site=react_native_android_fb) This issue was
-           * found when making Flow check .android.js files. */}
-          <ProgressBar styleAttr="Horizontal" color="black" />
-        </RNTesterBlock>
+      <RNTesterBlock title="Horizontal Blue ProgressBar">
+        <MovingBar styleAttr="Horizontal" indeterminate={false} color="blue" />
+      </RNTesterBlock>
+    </RNTesterPage>
+  );
+};
 
-        <RNTesterBlock title="Horizontal Blue ProgressBar">
-          <MovingBar
-            styleAttr="Horizontal"
-            indeterminate={false}
-            color="blue"
-          />
-        </RNTesterBlock>
-      </RNTesterPage>
-    );
-  }
-}
-
-module.exports = ProgressBarAndroidExample;
+export default App;

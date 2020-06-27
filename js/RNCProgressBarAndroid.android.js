@@ -12,7 +12,7 @@
 import React from 'react';
 
 import ProgressBarAndroidNativeComponent from './RNCProgressBarAndroidNativeComponent';
-
+import type {ProgressBarAndroidProps} from './types';
 /**
  * React component that wraps the Android-only `ProgressBar`. This component is
  * used to indicate that the app is loading or there is activity in the app.

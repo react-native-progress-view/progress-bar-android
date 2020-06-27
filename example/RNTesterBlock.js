@@ -9,50 +9,33 @@
 
 'use strict';
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-class RNTesterBlock extends React.Component<
-  {
-    title?: string,
-    description?: string,
-  },
-  $FlowFixMeState,
-> {
-  static propTypes = {
-    title: PropTypes.string,
-    description: PropTypes.string,
-  };
-
-  state = {description: (null: ?string)};
-
-  render() {
-    var description;
-    if (this.props.description) {
-      description = (
-        <Text style={styles.descriptionText}>{this.props.description}</Text>
-      );
-    }
-
-    return (
-      <View style={styles.container}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.titleText}>{this.props.title}</Text>
-          {description}
-        </View>
-        <View style={styles.children}>
-          {
-            // $FlowFixMe found when converting React.createClass to ES6
-            this.props.children
-          }
-        </View>
+type Props = $ReadOnly<{
+  title?: string,
+  description?: string,
+  children: React.Node,
+}>;
+const RNTesterBlock: React.ComponentType<Props> = ({
+  title,
+  description,
+  children,
+}) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.titleText}>{title}</Text>
+        {description ? (
+          <Text style={styles.descriptionText}>{description}</Text>
+        ) : null}
       </View>
-    );
-  }
-}
+      <View style={styles.children}>{children}</View>
+    </View>
+  );
+};
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     borderRadius: 3,
     borderWidth: 0.5,
@@ -77,16 +60,6 @@ var styles = StyleSheet.create({
   },
   descriptionText: {
     fontSize: 14,
-  },
-  disclosure: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    padding: 10,
-  },
-  disclosureIcon: {
-    width: 12,
-    height: 8,
   },
   children: {
     margin: 10,

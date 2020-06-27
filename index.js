@@ -1,1 +1,9 @@
-export {default as ProgressBar} from './js/RNCProgressBarAndroid';
+/**
+ * This file is an entry point for example app
+ */
+
+import {AppRegistry} from 'react-native';
+import App from './example/App';
+import {name as appName} from './example/app.json';
+
+AppRegistry.registerComponent(appName, () => App);

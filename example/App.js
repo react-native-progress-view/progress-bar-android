@@ -1,48 +1,77 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * Copyright (c) 2015-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  *
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+'use strict';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+import {ProgressBar} from '@react-native-community/progress-bar-android';
+import React from 'react';
+import createReactClass from 'create-react-class';
+import RNTesterBlock from './RNTesterBlock';
+import RNTesterPage from './RNTesterPage';
+
+import TimerMixin from 'react-timer-mixin';
+
+const MovingBar = createReactClass({
+  displayName: 'MovingBar',
+  mixins: [TimerMixin],
+
+  getInitialState: function () {
+    return {
+      progress: 0,
+    };
+  },
+
+  componentDidMount: function () {
+    this.setInterval(() => {
+      var progress = (this.state.progress + 0.02) % 1;
+      this.setState({progress: progress});
+    }, 50);
+  },
+
+  render: function () {
+    return <ProgressBar progress={this.state.progress} {...this.props} />;
+  },
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class ProgressBarAndroidExample extends React.Component<{}> {
+  static title = '<ProgressBarAndroid>';
+  static description = 'Horizontal bar to show the progress of some operation.';
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <RNTesterPage title="ProgressBar Examples">
+        <RNTesterBlock title="Horizontal Indeterminate ProgressBar">
+          {/* $FlowFixMe(>=0.78.0 site=react_native_android_fb) This issue was
+           * found when making Flow check .android.js files. */}
+          <ProgressBar styleAttr="Horizontal" />
+        </RNTesterBlock>
+
+        <RNTesterBlock title="Horizontal ProgressBar">
+          <MovingBar styleAttr="Horizontal" indeterminate={false} />
+        </RNTesterBlock>
+
+        <RNTesterBlock title="Horizontal Black Indeterminate ProgressBar">
+          {/* $FlowFixMe(>=0.78.0 site=react_native_android_fb) This issue was
+           * found when making Flow check .android.js files. */}
+          <ProgressBar styleAttr="Horizontal" color="black" />
+        </RNTesterBlock>
+
+        <RNTesterBlock title="Horizontal Blue ProgressBar">
+          <MovingBar
+            styleAttr="Horizontal"
+            indeterminate={false}
+            color="blue"
+          />
+        </RNTesterBlock>
+      </RNTesterPage>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+module.exports = ProgressBarAndroidExample;

@@ -1,4 +1,3 @@
-
 # @react-native-community/progress-bar-android
 
 [![Build Status][build-badge]][build]
@@ -16,7 +15,7 @@ Progress Bar Component for Android Devices
 ```
 npm install @react-native-community/progress-bar-android --save
 
-# or 
+# or
 
 yarn add @react-native-community/progress-bar-android
 ```
@@ -25,7 +24,7 @@ yarn add @react-native-community/progress-bar-android
 
 - React Native 0.60+
 
- The package is [automatically linked](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) when building the app. All you need to do is:
+The package is [automatically linked](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md) when building the app. All you need to do is:
 
 ```
 npx pod-install
@@ -55,23 +54,26 @@ $ react-native link @react-native-community/progress-bar-android
 <summary>Manually link the library - android</summary>
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactnativecommunity.androidprogressbar.RNCProgressBarPackage;` to the imports at the top of the file
-  - Add `new RNCProgressBarPackage()` to the list returned by the `getPackages()` method
+
+- Add `import com.reactnativecommunity.androidprogressbar.RNCProgressBarPackage;` to the imports at the top of the file
+- Add `new RNCProgressBarPackage()` to the list returned by the `getPackages()` method
+
 2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':@react-native-community_progress-bar-android'
-  	project(':@react-native-community_progress-bar-android').projectDir = new File(rootProject.projectDir, 	'../../node_modules/@react-native-community/progress-bar-android/android')
-  	```
+   ```
+   include ':@react-native-community_progress-bar-android'
+   project(':@react-native-community_progress-bar-android').projectDir = new File(rootProject.projectDir, 	'../../node_modules/@react-native-community/progress-bar-android/android')
+   ```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      implementation project(':@react-native-community_progress-bar-android')
-  	```
+   ```
+     implementation project(':@react-native-community_progress-bar-android')
+   ```
 
 </details>
 
-## Trying out this package in `example` 
+## Trying out this package in `example`
 
 ### Android
+
 1. Install dependencies
 1. Install dependencies for example folder
 1. Start the metro bundler
@@ -79,18 +81,16 @@ $ react-native link @react-native-community/progress-bar-android
 
 ```sh
 yarn install
-cd example
-# inside example
-yarn install
 yarn start
 yarn android
 ```
 
 # Example
+
 ```jsx
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import { ProgressBar } from '@react-native-community/progress-bar-android';
+import {ProgressBar} from '@react-native-community/progress-bar-android';
 
 export default function App() {
   return (
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-# Reference 
+# Reference
 
 ## Props
 
@@ -203,12 +203,11 @@ Used to locate this view in end-to-end tests.
 | ------ | -------- |
 | string | No       |
 
-  
 [build-badge]: https://img.shields.io/circleci/project/github/react-native-community/progress-bar-android/master.svg?style=flat-square
 [build]: https://circleci.com/gh/react-native-community/progress-bar-android
 [version-badge]: https://img.shields.io/npm/v/@react-native-community/progress-bar-android.svg?style=flat-square
 [package]: https://www.npmjs.com/package/@react-native-community/progress-bar-android
-[support-badge]:https://img.shields.io/badge/platforms-android-lightgrey.svg?style=flat-square
+[support-badge]: https://img.shields.io/badge/platforms-android-lightgrey.svg?style=flat-square
 [license-badge]: https://img.shields.io/npm/l/@react-native-community/progress-bar-android.svg?style=flat-square
 [license]: https://opensource.org/licenses/MIT
 [lean-core-badge]: https://img.shields.io/badge/Lean%20Core-Extracted-brightgreen.svg?style=flat-square

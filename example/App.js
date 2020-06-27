@@ -21,20 +21,20 @@ const MovingBar = createReactClass({
   displayName: 'MovingBar',
   mixins: [TimerMixin],
 
-  getInitialState: function() {
+  getInitialState: function () {
     return {
       progress: 0,
     };
   },
 
-  componentDidMount: function() {
+  componentDidMount: function () {
     this.setInterval(() => {
       var progress = (this.state.progress + 0.02) % 1;
       this.setState({progress: progress});
     }, 50);
   },
 
-  render: function() {
+  render: function () {
     return <ProgressBar progress={this.state.progress} {...this.props} />;
   },
 });

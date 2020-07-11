@@ -11,32 +11,19 @@
 
 import * as React from 'react';
 import {ProgressBar} from '../js';
-import createReactClass from 'create-react-class';
+
 import RNTesterBlock from './RNTesterBlock';
 import RNTesterPage from './RNTesterPage';
-import TimerMixin from 'react-timer-mixin';
 
-const MovingBar = createReactClass({
-  displayName: 'MovingBar',
-  mixins: [TimerMixin],
-
-  getInitialState: function () {
-    return {
-      progress: 0,
-    };
-  },
-
-  componentDidMount: function () {
-    this.setInterval(() => {
-      var progress = (this.state.progress + 0.02) % 1;
-      this.setState({progress: progress});
+const MovingBar = (props) => {
+  const [progress, setProgress] = React.useState(0);
+  React.useEffect(() => {
+    setInterval(() => {
+      setProgress((p) => (p + 0.02) % 1);
     }, 50);
-  },
-
-  render: function () {
-    return <ProgressBar progress={this.state.progress} {...this.props} />;
-  },
-});
+  }, []);
+  return <ProgressBar progress={progress} {...props} />;
+};
 
 const App: React.ComponentType<{}> = () => {
   return (

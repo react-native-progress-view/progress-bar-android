@@ -172,8 +172,21 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    // required for example
     implementation project(":@react-native-community_progress-bar-android")
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
+      exclude group:'com.facebook.fbjni'
+    }
+    debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
+        exclude group:'com.facebook.flipper'
+    }
+    debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}") {
+        exclude group:'com.facebook.flipper'
+    }
     if (enableHermes) {
         def hermesPath = "../../../node_modules/hermes-engine/android/";
         debugImplementation files(hermesPath + "hermes-debug.aar")

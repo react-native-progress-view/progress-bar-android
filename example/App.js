@@ -14,7 +14,6 @@ import {ProgressBar} from '../js';
 import createReactClass from 'create-react-class';
 import RNTesterBlock from './RNTesterBlock';
 import RNTesterPage from './RNTesterPage';
-
 import TimerMixin from 'react-timer-mixin';
 
 const MovingBar = createReactClass({
@@ -43,8 +42,6 @@ const App: React.ComponentType<{}> = () => {
   return (
     <RNTesterPage title="ProgressBar Examples">
       <RNTesterBlock title="Horizontal Indeterminate ProgressBar">
-        {/* $FlowFixMe(>=0.78.0 site=react_native_android_fb) This issue was
-         * found when making Flow check .android.js files. */}
         <ProgressBar styleAttr="Horizontal" />
       </RNTesterBlock>
 
@@ -53,8 +50,6 @@ const App: React.ComponentType<{}> = () => {
       </RNTesterBlock>
 
       <RNTesterBlock title="Horizontal Black Indeterminate ProgressBar">
-        {/* $FlowFixMe(>=0.78.0 site=react_native_android_fb) This issue was
-         * found when making Flow check .android.js files. */}
         <ProgressBar styleAttr="Horizontal" color="black" />
       </RNTesterBlock>
 

@@ -1,4 +1,3 @@
-
 package com.reactnativecommunity.androidprogressbar;
 
 import java.util.Arrays;
@@ -17,14 +16,9 @@ public class RNCProgressBarPackage implements ReactPackage {
     return Collections.emptyList();
   }
 
-  // Deprecated from RN 0.47
-  public List<Class<? extends JavaScriptModule>> createJSModules() {
-    return Collections.emptyList();
-  }
-
- @Override
+  @Override
   @SuppressWarnings("rawtypes")
   public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-      return Arrays.<ViewManager>asList(new ReactProgressBarViewManager());
+    return Arrays.<ViewManager>asList(new ReactProgressBarViewManager());
   }
 }

@@ -85,5 +85,5 @@ jobs:
       - name: Install Dependencies
         run: yarn
       - name: Build Android Example App and Library
-        run: cd example/android && ./gradlew clean assembleDebugs
+        run: cd example/android && ./gradlew clean assembleDebug
 

@@ -9,13 +9,8 @@
 
 'use strict';
 
-import type {
-  Double,
-  WithDefault,
-} from 'react-native/Libraries/Types/CodegenTypes';
-import codegenNativeComponent from 'react-native/Libraries/Utilities/codegenNativeComponent';
-import type {ViewProps} from 'react-native/Libraries/Components/View/ViewPropTypes';
-import type {NativeComponentType} from 'react-native/Libraries/Utilities/codegenNativeComponent';
+import {requireNativeComponent} from 'react-native';
+import type {HostComponent, ViewProps, Double, WithDefault} from 'react-native';
 
 type NativeProps = $ReadOnly<{|
   ...ViewProps,
@@ -30,6 +25,6 @@ type NativeProps = $ReadOnly<{|
   testID?: ?string,
 |}>;
 
-export default (codegenNativeComponent<NativeProps>(
+export default (requireNativeComponent<NativeProps>(
   'RNCProgressBar',
-): NativeComponentType<NativeProps>);
+): HostComponent<NativeProps>);

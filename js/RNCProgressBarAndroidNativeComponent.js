@@ -23,6 +23,7 @@ type NativeProps = $ReadOnly<{|
   animating?: WithDefault<boolean, true>,
   color?: ?string,
   testID?: ?string,
+  state?: WithDefault<Object, {}>,
 |}>;
 
 export default (requireNativeComponent<NativeProps>(

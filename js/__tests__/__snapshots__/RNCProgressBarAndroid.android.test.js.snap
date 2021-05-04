@@ -3,7 +3,9 @@
 exports[`<ProgressBar /> renders Horizontal ProgressBar 1`] = `
 <RNCProgressBar
   animating={true}
+  color="blue"
   indeterminate={true}
+  state=""
   styleAttr="Horizontal"
 />
 `;
@@ -11,7 +13,9 @@ exports[`<ProgressBar /> renders Horizontal ProgressBar 1`] = `
 exports[`<ProgressBar /> renders Inverse ProgressBar 1`] = `
 <RNCProgressBar
   animating={true}
+  color="blue"
   indeterminate={true}
+  state=""
   styleAttr="Normal"
   typeAttr="Inverse"
 />
@@ -20,7 +24,9 @@ exports[`<ProgressBar /> renders Inverse ProgressBar 1`] = `
 exports[`<ProgressBar /> renders enabled ProgressBar 1`] = `
 <RNCProgressBar
   animating={true}
+  color="blue"
   indeterminate={true}
+  state=""
   styleAttr="Normal"
 />
 `;

@@ -15,7 +15,7 @@
   "homepage": "https://github.com/react-native-community/react-native-progress-bar-android#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/react-native-community/react-native-progress-bar-android.git"
+    "url": "git+https://github.com/react-native-community/react-native-progress-bar-android.git"
   },
   "keywords": [
     "react-native",
@@ -61,5 +61,11 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/react-native-community/react-native-progress-bar-android/issues"
+  },
+  "directories": {
+    "example": "example"
   }
 }

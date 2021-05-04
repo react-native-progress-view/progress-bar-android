@@ -23,7 +23,7 @@ import type {ProgressBarAndroidProps} from './types';
  * render: function() {
  *   var progressBar =
  *     <View style={styles.container}>
- *       <ProgressBar styleAttr="Inverse" />
+ *       <ProgressBar styleAttr="Inverse" state={} />
  *     </View>;
 
  *   return (
@@ -49,6 +49,9 @@ ProgressBarAndroidToExport.defaultProps = {
   styleAttr: 'Normal',
   indeterminate: true,
   animating: true,
+  state: '',
+  color: 'blue',
+
 };
 
 export default (ProgressBarAndroidToExport: ProgressBarAndroidNativeComponent);

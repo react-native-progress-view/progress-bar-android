@@ -84,7 +84,7 @@ public class ReactProgressBarViewManager extends BaseViewManager<ProgressBarCont
   }
 
   @Override
-  @ReactProp(name = ViewProps.COLOR, customType = "Color")
+  @ReactProp(name = ViewProps.COLOR)
   public void setColor(ProgressBarContainerView view, @Nullable Integer color) {
     view.setColor(color);
   }

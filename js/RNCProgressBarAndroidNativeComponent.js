@@ -9,22 +9,22 @@
 
 'use strict';
 
-import {requireNativeComponent} from 'react-native';
-import type {HostComponent, ViewProps, Double, WithDefault} from 'react-native';
+import codegenNativeComponent from 'react-native/Libraries/Utilities/codegenNativeComponent';
+import {ColorValue} from 'react-native/Libraries/StyleSheet/StyleSheet';
+import type {ViewProps, Double, WithDefault} from 'react-native';
 
 type NativeProps = $ReadOnly<{|
   ...ViewProps,
 
   //Props
   styleAttr?: string,
-  typeAttr?: string,
   indeterminate: boolean,
   progress?: WithDefault<Double, 0>,
   animating?: WithDefault<boolean, true>,
-  color?: ?string,
-  testID?: ?string,
+  color?: ?ColorValue,
 |}>;
 
-export default (requireNativeComponent<NativeProps>(
-  'RNCProgressBar',
-): HostComponent<NativeProps>);
+export default codegenNativeComponent<NativeProps>('RNCProgressBar', {
+  interfaceOnly: true,
+  excludedPlatforms: ['iOS'],
+});

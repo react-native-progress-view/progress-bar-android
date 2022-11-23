@@ -18,6 +18,10 @@ import com.facebook.react.uimanager.BaseViewManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewProps;
+import com.facebook.react.uimanager.ViewManagerDelegate;
+
+import com.facebook.react.viewmanagers.RNCProgressBarManagerDelegate;
+import com.facebook.react.viewmanagers.RNCProgressBarManagerInterface;
 
 /**
  * Manages instances of ProgressBar. ProgressBar is wrapped in a
@@ -27,9 +31,10 @@ import com.facebook.react.uimanager.ViewProps;
  * style given.
  */
 @ReactModule(name = ReactProgressBarViewManager.REACT_CLASS)
-public class ReactProgressBarViewManager extends BaseViewManager<ProgressBarContainerView, ProgressBarShadowNode> {
+public class ReactProgressBarViewManager extends BaseViewManager<ProgressBarContainerView, ProgressBarShadowNode> implements RNCProgressBarManagerInterface<ProgressBarContainerView> {
 
   public static final String REACT_CLASS = "RNCProgressBar";
+  private final ViewManagerDelegate<ProgressBarContainerView> mDelegate;
 
   /* package */ static final String PROP_STYLE = "styleAttr";
   /* package */ static final String PROP_INDETERMINATE = "indeterminate";
@@ -39,6 +44,16 @@ public class ReactProgressBarViewManager extends BaseViewManager<ProgressBarCont
   /* package */ static final String DEFAULT_STYLE = "Normal";
 
   private static Object sProgressBarCtorLock = new Object();
+
+  @Nullable
+  @Override
+  protected ViewManagerDelegate<ProgressBarContainerView> getDelegate() {
+    return mDelegate;
+  }
+
+  public ReactProgressBarViewManager() {
+    mDelegate = new RNCProgressBarManagerDelegate<>(this);
+  }
 
   /**
    * We create ProgressBars on both the UI and shadow threads. There is a race
@@ -62,26 +77,31 @@ public class ReactProgressBarViewManager extends BaseViewManager<ProgressBarCont
     return new ProgressBarContainerView(context);
   }
 
+  @Override
   @ReactProp(name = PROP_STYLE)
-  public void setStyle(ProgressBarContainerView view, @Nullable String styleName) {
+  public void setStyleAttr(ProgressBarContainerView view, @Nullable String styleName) {
     view.setStyle(styleName);
   }
 
+  @Override
   @ReactProp(name = ViewProps.COLOR, customType = "Color")
   public void setColor(ProgressBarContainerView view, @Nullable Integer color) {
     view.setColor(color);
   }
 
+  @Override
   @ReactProp(name = PROP_INDETERMINATE)
   public void setIndeterminate(ProgressBarContainerView view, boolean indeterminate) {
     view.setIndeterminate(indeterminate);
   }
 
+  @Override
   @ReactProp(name = PROP_PROGRESS)
   public void setProgress(ProgressBarContainerView view, double progress) {
     view.setProgress(progress);
   }
 
+  @Override
   @ReactProp(name = PROP_ANIMATING)
   public void setAnimating(ProgressBarContainerView view, boolean animating) {
     view.setAnimating(animating);

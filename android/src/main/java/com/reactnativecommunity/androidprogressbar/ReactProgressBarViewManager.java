@@ -10,8 +10,10 @@ package com.reactnativecommunity.androidprogressbar;
 import javax.annotation.Nullable;
 
 import android.content.Context;
+import android.view.View;
 import android.widget.ProgressBar;
 
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.JSApplicationIllegalArgumentException;
 import com.facebook.react.module.annotations.ReactModule;
 import com.facebook.react.uimanager.BaseViewManager;
@@ -19,6 +21,12 @@ import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewProps;
 import com.facebook.react.uimanager.ViewManagerDelegate;
+import com.facebook.react.uimanager.PixelUtil;
+
+import com.facebook.yoga.YogaMeasureFunction;
+import com.facebook.yoga.YogaMeasureMode;
+import com.facebook.yoga.YogaMeasureOutput;
+import com.facebook.yoga.YogaNode;
 
 import com.facebook.react.viewmanagers.RNCProgressBarManagerDelegate;
 import com.facebook.react.viewmanagers.RNCProgressBarManagerInterface;
@@ -53,6 +61,26 @@ public class ReactProgressBarViewManager extends BaseViewManager<ProgressBarCont
 
   public ReactProgressBarViewManager() {
     mDelegate = new RNCProgressBarManagerDelegate<>(this);
+  }
+
+  public long measure(
+          Context context,
+          ReadableMap localData,
+          ReadableMap props,
+          ReadableMap state,
+          float width,
+          YogaMeasureMode widthMode,
+          float height,
+          YogaMeasureMode heightMode,
+          @androidx.annotation.Nullable float[] attachmentsPositions) {
+    final int style = ReactProgressBarViewManager.getStyleFromString(props.getString("styleAttr"));
+
+    ProgressBar view = ReactProgressBarViewManager.createProgressBar(context, style);
+    int measureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+    view.measure(measureSpec, measureSpec);
+    return YogaMeasureOutput.make(
+            PixelUtil.toDIPFromPixel(view.getMeasuredWidth()),
+            PixelUtil.toDIPFromPixel(view.getMeasuredHeight()));
   }
 
   /**

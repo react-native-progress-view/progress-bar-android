@@ -2,6 +2,7 @@
 
 #include <react/debug/react_native_assert.h>
 #include "RNCProgressBarShadowNode.h"
+#include "RNCProgressBarMeasurementsManager.h"
 #include <react/renderer/core/ConcreteComponentDescriptor.h>
 #include <react/renderer/components/rnandroidprogressbar/Props.h>
 
@@ -14,34 +15,32 @@ namespace facebook
             : public ConcreteComponentDescriptor<RNCProgressBarShadowNode>
         {
         public:
-            using ConcreteComponentDescriptor::ConcreteComponentDescriptor;
+            RNCProgressBarComponentDescriptor(
+                ComponentDescriptorParameters const &parameters)
+                : ConcreteComponentDescriptor(parameters),
+                  measurementsManager_(std::make_shared<RNCProgressBarMeasurementsManager>(
+                      contextContainer_)) {}
 
             void adopt(ShadowNode::Unshared const &shadowNode) const override
             {
-                react_native_assert(
-                    std::dynamic_pointer_cast<RNCProgressBarShadowNode>(shadowNode));
+                ConcreteComponentDescriptor::adopt(shadowNode);
+
+                assert(std::dynamic_pointer_cast<RNCProgressBarShadowNode>(shadowNode));
                 auto barShadowNode =
                     std::static_pointer_cast<RNCProgressBarShadowNode>(shadowNode);
 
-                react_native_assert(
-                    std::dynamic_pointer_cast<YogaLayoutableShadowNode>(barShadowNode));
-                auto layoutableShadowNode =
-                    std::static_pointer_cast<YogaLayoutableShadowNode>(barShadowNode);
+                // `RNCProgressBarShadowNode` uses `RNCProgressBarMeasurementsManager` to
+                // provide measurements to Yoga.
+                barShadowNode->setProgressBarMeasurementsManager(
+                    measurementsManager_);
 
-//                auto state =
-//                    std::static_pointer_cast<const RNCProgressBarShadowNode::ConcreteState>(
-//                        shadowNode->getState());
-//                auto stateData = state->getData();
-
-                // if (stateData.frameSize.width != 0 && stateData.frameSize.height != 0)
-                {
-                    layoutableShadowNode->setSize(
-                        Size{200, 50});
-                    // Size{stateData.frameSize.width, stateData.frameSize.height});
-                }
-
-                ConcreteComponentDescriptor::adopt(shadowNode);
+                // All `RNCProgressBarShadowNode`s must have leaf Yoga nodes with properly
+                // setup measure function.
+                barShadowNode->enableMeasurement();
             }
+
+        private:
+            const std::shared_ptr<RNCProgressBarMeasurementsManager> measurementsManager_;
         };
 
     } // namespace react

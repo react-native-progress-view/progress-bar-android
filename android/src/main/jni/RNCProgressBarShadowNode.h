@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RNCProgressBarState.h"
+#include "RNCProgressBarMeasurementsManager.h"
 #include <react/renderer/components/rnandroidprogressbar/Props.h>
 #include <react/renderer/components/view/ConcreteViewShadowNode.h>
 #include <react/renderer/components/view/ViewEventEmitter.h>
@@ -23,6 +24,19 @@ namespace facebook
     {
     public:
       using ConcreteViewShadowNode::ConcreteViewShadowNode;
+      // Associates a shared `RNCProgressBarMeasurementsManager` with the node.
+      void setProgressBarMeasurementsManager(
+          const std::shared_ptr<RNCProgressBarMeasurementsManager>
+              &measurementsManager);
+
+#pragma mark - LayoutableShadowNode
+
+      Size measureContent(
+          LayoutContext const &layoutContext,
+          LayoutConstraints const &layoutConstraints) const override;
+
+    private:
+      std::shared_ptr<RNCProgressBarMeasurementsManager> measurementsManager_;
     };
 
   } // namespace react

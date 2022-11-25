@@ -39,6 +39,15 @@ android {
     lintOptions {
         abortOnError false
     }
+    sourceSets.main {
+        java {
+            if (!isNewArchitectureEnabled()) {
+                srcDirs += [
+                    "src/paper/java",
+                ]
+            }
+        }
+    }
 }
 
 repositories {

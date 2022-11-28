@@ -28,7 +28,8 @@
     "android",
     "ios",
     "js",
-    "react-native-progress-bar-android.podspec"
+    "react-native-progress-bar-android.podspec",
+    "react-native.config.js"
   ],
   "author": "Wagner Maciel <wagnermaciel@google.com>",
   "contributors": [

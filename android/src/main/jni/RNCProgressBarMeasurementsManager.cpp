@@ -11,7 +11,10 @@ namespace facebook
 {
   namespace react
   {
-
+    // Based on react-native/ReactCommon/react/renderer/components/switch/androidswitch/react/renderer/components/androidswitch/AndroidSwitchMeasurementsManager.cpp
+    // This class is shared between the shadow nodes and allows us to measure the progress bar.
+    // It calls the measure method of the ReactProgressBarViewManager.java which is responsible for the actual
+    // measurement of the progress bar.
     Size RNCProgressBarMeasurementsManager::measure(
         SurfaceId surfaceId,
         LayoutConstraints layoutConstraints,

@@ -21,17 +21,12 @@ namespace facebook
       using Shared = std::shared_ptr<const RNCProgressBarState>;
 
       RNCProgressBarState(){};
-      RNCProgressBarState(Size frameSize_) : frameSize(frameSize_){};
 
 #ifdef ANDROID
       RNCProgressBarState(
           RNCProgressBarState const &previousState,
-          folly::dynamic data) : frameSize(Size{
-                                     (Float)data["frameWidth"].getDouble(),
-                                     (Float)data["frameHeight"].getDouble()}){};
+          folly::dynamic data){};
 #endif
-
-      const Size frameSize{};
 
 #ifdef ANDROID
       folly::dynamic getDynamic() const;

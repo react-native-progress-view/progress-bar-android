@@ -10,7 +10,6 @@
 'use strict';
 
 import React from 'react';
-import {processColor} from 'react-native';
 
 import ProgressBarAndroidNativeComponent from './RNCProgressBarAndroidNativeComponent';
 import type {ProgressBarAndroidProps} from './types';
@@ -38,16 +37,10 @@ import type {ProgressBarAndroidProps} from './types';
  * ```
  */
 const ProgressBarAndroid = (
-  {color, ...rest}: ProgressBarAndroidProps,
+  props: ProgressBarAndroidProps,
   forwardedRef: ?React.Ref<typeof ProgressBarAndroidNativeComponent>,
 ) => {
-  return (
-    <ProgressBarAndroidNativeComponent
-      color={processColor(color)}
-      {...rest}
-      ref={forwardedRef}
-    />
-  );
+  return <ProgressBarAndroidNativeComponent {...props} ref={forwardedRef} />;
 };
 
 const ProgressBarAndroidToExport = React.forwardRef(ProgressBarAndroid);

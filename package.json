@@ -28,7 +28,8 @@
     "android",
     "ios",
     "js",
-    "react-native-progress-bar-android.podspec"
+    "react-native-progress-bar-android.podspec",
+    "react-native.config.js"
   ],
   "author": "Wagner Maciel <wagnermaciel@google.com>",
   "contributors": [
@@ -61,5 +62,13 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "codegenConfig": {
+    "name": "rnandroidprogressbar",
+    "type": "components",
+    "jsSrcsDir": "./js",
+    "android": {
+      "javaPackageName": "com.reactnativecommunity.androidprogressbar"
+    }
   }
 }

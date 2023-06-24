@@ -1,6 +1,6 @@
 # @react-native-community/progress-bar-android
 
-[![Build Status][build-badge]][build]
+[![Build](https://github.com/react-native-progress-view/progress-bar-android/actions/workflows/ci.yml/badge.svg)](https://github.com/react-native-progress-view/progress-bar-android/actions/workflows/ci.yml)
 [![Version][version-badge]][package]
 ![Supports Android][support-badge]
 [![MIT License][license-badge]][license]
@@ -203,8 +203,6 @@ Used to locate this view in end-to-end tests.
 | ------ | -------- |
 | string | No       |
 
-[build-badge]: https://img.shields.io/circleci/project/github/react-native-community/progress-bar-android/master.svg?style=flat-square
-[build]: https://circleci.com/gh/react-native-community/progress-bar-android
 [version-badge]: https://img.shields.io/npm/v/@react-native-community/progress-bar-android.svg?style=flat-square
 [package]: https://www.npmjs.com/package/@react-native-community/progress-bar-android
 [support-badge]: https://img.shields.io/badge/platforms-android-lightgrey.svg?style=flat-square

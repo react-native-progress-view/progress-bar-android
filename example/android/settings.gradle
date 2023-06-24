@@ -5,3 +5,4 @@ include ':@react-native-community_progress-bar-android'
 project(':@react-native-community_progress-bar-android').projectDir = new File(rootProject.projectDir, 	'../../android')
 
 include ':app'
+includeBuild('../../node_modules/react-native-gradle-plugin')

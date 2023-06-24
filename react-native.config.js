@@ -22,7 +22,6 @@ if (process.argv.includes(codegenSwitch)) {
 module.exports = {
   project: {
     android: {sourceDir: './example/android'},
-    ios: {project: './example/ios/example.xcworkspace'},
   },
   dependency: {
     platforms: {

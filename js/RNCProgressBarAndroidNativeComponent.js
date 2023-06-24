@@ -10,7 +10,7 @@
 'use strict';
 
 import codegenNativeComponent from 'react-native/Libraries/Utilities/codegenNativeComponent';
-import {ColorValue} from 'react-native/Libraries/StyleSheet/StyleSheet';
+import type {ColorValue} from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 import type {ViewProps, Double, WithDefault} from 'react-native';
 
 type NativeProps = $ReadOnly<{|
@@ -24,6 +24,7 @@ type NativeProps = $ReadOnly<{|
   color?: ?ColorValue,
 |}>;
 
+// $FlowFixMe Fix react-native version in the repository as the option type is old
 export default codegenNativeComponent<NativeProps>('RNCProgressBar', {
   interfaceOnly: true,
   excludedPlatforms: ['iOS'],

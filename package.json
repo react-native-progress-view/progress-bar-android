@@ -51,9 +51,9 @@
     "eslint": "^7.12.1",
     "flow-bin": "^0.129.0",
     "jest": "^25.2.3",
-    "metro-react-native-babel-preset": "0.63.0",
+    "metro-react-native-babel-preset": "0.63.3",
     "react": "16.13.1",
-    "react-native": "^0.63.3",
+    "react-native": "^0.63.4",
     "react-test-renderer": "16.13.1",
     "typescript": "^3.9.6"
   },

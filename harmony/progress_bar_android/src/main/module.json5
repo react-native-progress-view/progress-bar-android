@@ -1,0 +1,11 @@
+{
+  "module": {
+    "name": "progress_bar_android",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet",
+      "2in1"
+    ]
+  }
+}
